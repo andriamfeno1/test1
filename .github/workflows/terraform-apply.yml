@@ -1,14 +1,11 @@
-name: Terraform Azure Plan
+name: Terraform Azure Apply
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
-  terraform-plan:
-    name: Terraform Plan
+  terraform-apply:
+    name: Terraform Apply
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -42,5 +39,5 @@ jobs:
       - name: Terraform init
         run: terraform init
 
-      - name: Terraform plan
-        run: terraform plan -var-file=azure.tfvars -var="administrator_password=${{ secrets.AZURE_ADMIN_PASSWORD }}"
+      - name: Terraform apply
+        run: terraform apply -auto-approve -var-file=azure.tfvars -var="administrator_password=${{ secrets.AZURE_ADMIN_PASSWORD }}"
