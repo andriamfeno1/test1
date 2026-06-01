@@ -43,6 +43,6 @@ variable "sku_name" {
 
 variable "max_size_gb" {
   description = "Maximum size of the SQL Azure database in GB"
-  type        = string
+  type        = number
   default     = 250
 }
