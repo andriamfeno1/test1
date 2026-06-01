@@ -1,4 +1,4 @@
-# Paramètres Azure communs pour Terraform
+# Common Azure settings for Terraform
 location              = "westeurope"
 resource_group_name   = "rg-terraform-db"
 server_name           = "psql-server-demo"
