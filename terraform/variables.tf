@@ -11,50 +11,38 @@ variable "resource_group_name" {
 }
 
 variable "server_name" {
-  description = "Azure PostgreSQL server name"
+  description = "Azure SQL Server name"
   type        = string
-  default     = "psql-server-demo"
+  default     = "sqlserver-demo-001"
 }
 
 variable "administrator_login" {
-  description = "Administrator login for PostgreSQL server"
+  description = "Administrator login for SQL Server"
   type        = string
   default     = "sqladminuser"
 }
 
 variable "administrator_password" {
-  description = "Administrator password for PostgreSQL server"
+  description = "Administrator password for SQL Server"
   type        = string
   sensitive   = true
   default     = ""
 }
 
 variable "database_name" {
-  description = "Name of the PostgreSQL database to create"
+  description = "Name of the SQL Azure database to create"
   type        = string
   default     = "mydatabase"
 }
 
 variable "sku_name" {
-  description = "SKU for the PostgreSQL server"
+  description = "SKU for the SQL Azure database"
   type        = string
-  default     = "B_Gen5_1"
+  default     = "Standard"
 }
 
-variable "storage_mb" {
-  description = "Storage size in MB for the PostgreSQL server"
-  type        = number
-  default     = 32768
-}
-
-variable "backup_retention_days" {
-  description = "Backup retention days for PostgreSQL server"
-  type        = number
-  default     = 7
-}
-
-variable "version" {
-  description = "PostgreSQL version"
+variable "max_size_gb" {
+  description = "Maximum size of the SQL Azure database in GB"
   type        = string
-  default     = "15"
+  default     = 250
 }
