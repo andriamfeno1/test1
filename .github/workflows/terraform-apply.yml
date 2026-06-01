@@ -3,6 +3,10 @@ name: Terraform Azure Apply
 on:
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   terraform-apply:
     name: Terraform Apply
